@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <!-- Creates the header for the app -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Glasgow Commonwealth Games 2014" />
+
+    <!-- Creates the map fragment, allows the map to default to the position of Glasgow, -->
+    <!-- using the Lat and Lng values to specify the co-ordinates of Glasgow -->
+
+    <fragment
+        android:id="@+id/my_map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="415dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/textView1"
+        map:cameraTargetLat="55.871459"
+        map:cameraTargetLng="-4.250443"
+        map:cameraTilt="45"
+        map:cameraZoom="14" />
+
+    <!-- Creates the button that is used to change the map type to googles -->
+    <!-- default view. -->
+    <Button
+        android:id="@+id/normalView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Normal View"
+        android:onClick="onClick"
+        android:enabled="false"
+         />
+
+    <!-- Creates the button that is used to change the map type to googles -->
+    <!-- satellite view. -->    
+    <Button
+        android:id="@+id/satView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/normalView"
+        android:onClick="onClick"
+        android:text="Satellite View" />
+
+    <!-- Creates the button that is used to view the last 10 hosts of the games -->
+    <Button
+        android:id="@+id/last10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/my_map"
+        android:text="View Previous Hosts"
+        android:onClick="onClick" />
+
+</RelativeLayout>
